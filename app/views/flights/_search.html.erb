@@ -1,0 +1,15 @@
+<%= form_with url: "/", method: :get do |form| %>
+    <%= form.label :departure_code, "Departure Airport" %>
+    <%= select_tag(:departure_code, options_for_select(@airport_options)) %>
+    <br>
+    <%= form.label :arrival_code, "Arrival Airport" %>
+    <%= select_tag(:arrival_code, options_for_select(@airport_options)) %>
+    <br>
+    <%= form.label :num_tickets, "Number of Passengers" %>
+    <%= select_tag(:num_tickets, options_for_select(1..4)) %>
+    <br>
+    <%= form.label :date, "Date" %>
+    <%= select_tag(:date, options_for_select(@date_options)) %>
+    <br>
+    <%= form.submit "Search"%>
+<% end %>
