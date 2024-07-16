@@ -1,24 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a project from The Odin Project Rails Bootcamp (https://www.theodinproject.com/lessons/ruby-on-rails-flight-booker)
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The goals of this assignment are to practice building and interacting with advanced forms, become more comfortable with associations, practice smart querying, and reinforce good Rails coding techniques.
