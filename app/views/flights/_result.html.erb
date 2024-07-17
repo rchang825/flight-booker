@@ -1,0 +1,8 @@
+<h3>Flights Found!</h3>
+<%= form_with model: @booking do |form| %>
+    <% @flights.each do |flight| %>
+        <%= form.radio_button :flight, flight.id%>
+        <%= form.label :"flight_#{flight.id}", "Flight number #{flight.id}, #{flight.duration}" %>
+        <br>
+    <% end %>
+<% end %>

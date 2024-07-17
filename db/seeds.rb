@@ -26,7 +26,7 @@ Flight.find_or_create_by!(departure_airport:pit, arrival_airport:sfo, date:"16/0
 Flight.find_or_create_by!(departure_airport:pit, arrival_airport:sfo, date:"17/08/2023", duration:"5 hour 45 min")
 Flight.find_or_create_by!(departure_airport:clt, arrival_airport:nyc, date:"16/11/2023", duration:"2 hour 30 min")
 Flight.find_or_create_by!(departure_airport:pit, arrival_airport:sea, date:"16/08/2023", duration:"8 hours")
-Flight.find_or_create_by!(departure_airport:pit, arrival_airport:sfo, date:"16/08/2023", duration:"6 hour 30 min")
+Flight.find_or_create_by!(departure_airport:pit, arrival_airport:sea, date:"16/08/2023", duration:"6 hour 30 min")
 
 
 
