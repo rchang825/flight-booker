@@ -4,8 +4,6 @@ class FlightsController < ApplicationController
     @date_options = Flight.all.map{|f| [f.date.strftime("%m/%d/%Y"), f.date.strftime("%Y%m%d")] }
     puts params
     @flights = find_flights
-    puts "Flights found.............."
-    puts @flights.first.id
   end
 
   private
