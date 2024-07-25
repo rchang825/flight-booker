@@ -2,8 +2,9 @@ class FlightsController < ApplicationController
   def index
     @airport_options = Airport.all.map{|a| [ a.code, a.code ] }
     @date_options = Flight.all.map{|f| [f.date.strftime("%m/%d/%Y"), f.date.strftime("%Y%m%d")] }
-    puts params
-    @flights = find_flights
+    puts "PARAMSSSSSSSSSS"
+    puts params.inspect
+    @flights = find_flights if params[:departure_code]
   end
 
   private

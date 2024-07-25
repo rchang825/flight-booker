@@ -1,5 +1,6 @@
-<h3>Flights Found!</h3>
-<%= form_with url: "/booking/new", method: :get do |form| %>
+<% if @flights %>
+<h3> <%= "Flights Found!" if @flights.first %> </h3>
+<%= form_with url: new_booking_path, method: :get do |form| %>
     <% @flights.each do |flight| %>
         <%= form.radio_button :flight, flight.id%>
         <%= form.label :"flight_#{flight.id}", "Flight number #{flight.id}" %>
@@ -8,4 +9,6 @@
         <%= render partial: "flight", locals: {flight: flight} %>
         <br>
     <% end %>
+    <%= form.submit ">> Passenger Details" %>
+<% end %>
 <% end %>

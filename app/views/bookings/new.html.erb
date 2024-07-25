@@ -1,5 +1,13 @@
-new booking form
-
-date, airports, flight id of chosen flight
-
-using num_tickets, same num of passenger fields
+<%= form_with model: @booking do |form| %>
+    <%= @flight %> <br>
+    <%= form.fields_for :passengers, @booking.passengers do |sub_form| %>
+        Passenger <br>
+        <%= sub_form.label :name %>
+        <%= sub_form.text_field :name %>
+        <br>
+        <%= sub_form.label :email %>
+        <%= sub_form.text_field :email %>
+        <br>
+    <% end %>
+    <%= form.submit ">> Payment" %>
+<% end %>
