@@ -1,5 +1,7 @@
 <%= form_with model: @booking do |form| %>
-    <%= @flight %> <br>
+    <%= "Flight:" %>
+    <%= @flight.id %> <br>
+    <%= form.hidden_field :flight_id, value: @flight.id %>
     <%= form.fields_for :passengers, @booking.passengers do |sub_form| %>
         Passenger <br>
         <%= sub_form.label :name %>
