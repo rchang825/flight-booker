@@ -2,14 +2,17 @@
     <%= "Flight:" %>
     <%= @flight.id %> <br>
     <%= form.hidden_field :flight_id, value: @flight.id %>
-    <%= form.fields_for :passengers, @booking.passengers do |sub_form| %>
-        Passenger <br>
-        <%= sub_form.label :name %>
-        <%= sub_form.text_field :name %>
-        <br>
-        <%= sub_form.label :email %>
-        <%= sub_form.text_field :email %>
-        <br>
-    <% end %>
+    <div data-controller="passengers">
+        <%= form.fields_for :passengers, @booking.passengers do |sub_form| %>
+            Passenger <br>
+            <%= sub_form.label :name %>
+            <%= sub_form.text_field :name %>
+            <br>
+            <%= sub_form.label :email %>
+            <%= sub_form.text_field :email %>
+            <br>
+        <% end %>
+        <button data-action="click->passengers#add">Add New Passenger</button>
+    </div>
     <%= form.submit ">> Payment" %>
 <% end %>

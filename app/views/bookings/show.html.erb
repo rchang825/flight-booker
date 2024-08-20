@@ -1,10 +1,9 @@
-Booking Information
-
-Flight<br>
+<h1>Booking Information</h1>
+Flight
 <%= @booking.flight_id %>
 
 <br>
-Passengers
+<strong>Passengers</strong>
 <br>
 <% @booking.passengers.each do |passenger| %>
     <%= passenger.name %>
