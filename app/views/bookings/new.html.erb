@@ -2,17 +2,36 @@
     <%= "Flight:" %>
     <%= @flight.id %> <br>
     <%= form.hidden_field :flight_id, value: @flight.id %>
+
     <div data-controller="passengers">
-        <%= form.fields_for :passengers, @booking.passengers do |sub_form| %>
-            Passenger <br>
-            <%= sub_form.label :name %>
-            <%= sub_form.text_field :name %>
-            <br>
-            <%= sub_form.label :email %>
-            <%= sub_form.text_field :email %>
-            <br>
-        <% end %>
-        <button data-action="click->passengers#add">Add New Passenger</button>
-    </div>
-    <%= form.submit ">> Payment" %>
-<% end %>
+        <div data-passengers-target="passengersContainer">
+            <div>
+                <%= form.fields_for :passengers, @booking.passengers do |sub_form| %>
+                    Passenger <br>
+                    <%= sub_form.label :name %>
+                    <%= sub_form.text_field :name %>
+                    <br>
+                    <%= sub_form.label :email %>
+                    <%= sub_form.text_field :email %>
+                    <br>
+                    <button type="button" data-action="click->passengers#remove">Remove Passenger</button>
+                <% end %>
+            </div>
+        </div>
+        <template id="passengerForm" data-passengers-target="template"> 
+            <div>
+                Passenger <br>
+                <label for="booking_passengers_attributes_0_name">Name</label>
+                <input type="text" name="booking[passengers_attributes][0][name]" id="booking_passengers_attributes_0_name">
+                <br>
+                <label for="booking_passengers_attributes_0_email">Email</label>
+                <input type="text" name="booking[passengers_attributes][0][email]" id="booking_passengers_attributes_0_email">
+                <br>
+                <button type="button" data-action="click->passengers#remove">Remove Passenger</button>
+            </div>
+        </template>
+        <button type="button" data-action="click->passengers#add">Add New Passenger</button>
+    </div>    
+    <%= form.submit ">> Payment" %>    
+<% end %>    
+
